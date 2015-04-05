@@ -7,6 +7,6 @@
     </li>
   </ul>
   
-  this.tutorials = opts.items
+  this.tutorials = opts.tutorials
   
 </tutorials>
