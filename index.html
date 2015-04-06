@@ -16,10 +16,9 @@
   <div class="container">
     <div class="row">
       <div class="twelve columns">
-          
-        <p>Here you can watch free tutorial videos</p>
 
-        <tutorials></tutorials>
+        <tutorials show={ Parse.User.current() }></tutorials>
+        <login hide={ Parse.User.current() }></login>
 
       </div>
     </div>
@@ -28,7 +27,7 @@
   <script src="tutorials.tag" type="riot/tag"></script>
   <script src="https://cdn.jsdelivr.net/g/riot@2.0(riot.min.js+compiler.min.js)"></script>
   <script>
-    riot.mount('tutorials', {
+    riot.mount('tutorials login', {
       title: 'Free tutorials',
       tutorials: [
         { title: 'Setting up a web site', description: 'Staring up...' },
