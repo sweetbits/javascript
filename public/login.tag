@@ -1,7 +1,7 @@
-var a;
-
 <login>
   
+  var a = 42;
+
   <form onsubmit={ login }>
     <h2>Log In</h2>
     <div class="error" style="display:none"></div>
