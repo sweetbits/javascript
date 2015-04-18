@@ -20,7 +20,17 @@
 
       <nav>
         <ul class="nav nav-pills pull-right">
-          <li id="user-link" role="presentation"><a data-toggle="modal" data-target="#login-form" href="#">Log In</a></li>
+          <li style="display:none" id="login-link" role="presentation">
+            <a data-toggle="modal" data-target="#login-form" href="#">Log In</a>
+          </li>
+          <li style="display:none" id="profile-link" role="presentation" class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-expanded="false">
+              <span class="username"></span> <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu" role="menu">
+              <li role="presentation"><a role="menuitem" id="logout" tabindex="-1" href="#">Log Out</a></li>
+            </ul>
+          </li>
           <li class="highlight" role="presentation"><a href="/join">Start Learning</a></li>
         </ul>
         <ul class="nav nav-pills">
