@@ -222,7 +222,7 @@ jQuery(function ($) {
 
         isAnonymous();
 
-        if (response.status == 404) {
+        if (response.status == 400) {
           message = response.responseJSON.error;
         }
         else {
