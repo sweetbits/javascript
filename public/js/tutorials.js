@@ -145,7 +145,12 @@ jQuery(function ($) {
         $('#login-form').modal('hide');
         isLoggedIn();
 
-        $('#toplevel-alert .message').text('Welcome back');
+        $('#toplevel-alert')
+          .removeClass('alert-danger')
+          .addClass('alert-success')
+          .slideDown()
+          .find('.message')
+            .text('Welcome back');
       },
       error: function (response, responseStatus, responseMessage) {
         var message;
