@@ -46,6 +46,9 @@ jQuery(function ($) {
 
   function isAnonymous() {
     console.log('Anonymous');
+
+    delete localStorage['user.sessionToken'];
+
     $('#profile-link .username').text('');
     $('#login-link').show();
     $('#profile-link').hide();
