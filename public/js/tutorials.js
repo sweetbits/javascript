@@ -115,8 +115,8 @@ jQuery(function ($) {
   /*
    * Login
    */
-  $('#login-form .alert').on('click', '.close', function () {
-    $(this).hide();
+  $('#login-form .alert,#toplevel-alert').on('click', '.close', function () {
+    $(this).parents('.alert').hide();
   });
 
   $('#login-form').on('hidden.bs.modal', function (e) {
@@ -206,7 +206,11 @@ jQuery(function ($) {
 
         isLoggedIn();
 
-        $('#toplevel-alert .message').text('Welcome. Now, start learning');
+        $('#toplevel-alert')
+          .removeClass('alert-danger')
+          .addClass('alert-success')
+          .find('.message')
+            .text('Welcome. Now, start learning');
       },
       error: function (response, responseStatus, responseMessage) {
         var message;
@@ -222,11 +226,15 @@ jQuery(function ($) {
 
         console.log("Joining failed", message);
 
-        $('.alert .message', self).text(message);
-        $('.alert', self).slideDown();
+        $('#toplevel-alert')
+          .removeClass('alert-success')
+          .addClass('alert-danger')
+          .find('.message')
+            .text('There was an error: ' + ucfirst(message));
       },
       complete: function () {
         $('button[type="submit"]').prop('disabled', false);
+        $('#toplevel-alert').slideDown();
       }
     });
   });
