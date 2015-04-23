@@ -117,7 +117,7 @@ jQuery(function ($) {
           isLoggedIn();
         }
       },
-      complete: function () {
+      error: function () {
         isAnonymous();
       }
     });
