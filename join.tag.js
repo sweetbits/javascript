@@ -65,11 +65,7 @@
 
         isLoggedIn();
 
-        $('#toplevel-alert')
-          .removeClass('alert-danger')
-          .addClass('alert-success')
-          .find('.message')
-            .text('Welcome. Now, start learning');
+        toplevelAlert('Welcome. Now, start learning');
       },
       error: function (response, responseStatus, responseMessage) {
         var message;
@@ -83,13 +79,7 @@
           message = responseStatus + ': ' + responseMessage;
         }
 
-        console.log("Joining failed", message);
-
-        $('#toplevel-alert')
-          .removeClass('alert-success')
-          .addClass('alert-danger')
-          .find('.message')
-            .text('There was an error: ' + ucfirst(message));
+        toplevelAlert('There was an error: ' + ucfirst(message), 'danger');
       },
       complete: function () {
         $('button[type="submit"]').prop('disabled', false);

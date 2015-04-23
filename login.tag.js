@@ -65,12 +65,7 @@
         $('#login-form').modal('hide');
         isLoggedIn();
 
-        $('#toplevel-alert')
-          .removeClass('alert-danger')
-          .addClass('alert-success')
-          .slideDown()
-          .find('.message')
-            .text('Welcome back');
+        toplevelAlert('Welcome back');
       },
       error: function (response, responseStatus, responseMessage) {
         var message;
@@ -86,8 +81,8 @@
 
         console.log("Login failed", message);
 
-        $('.alert .message', self).text(message);
-        $('.alert', self).slideDown();
+        $('.alert .message', self.root).text(ucfirst(message));
+        $('.alert', self.root).slideDown();
       },
       complete: function () {
         $('button[type="submit"]').prop('disabled', false);

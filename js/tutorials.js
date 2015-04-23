@@ -43,6 +43,31 @@ function parse(url, settings) {
   $.ajax(parseBaseUrl + url, settings);
 }
 
+function toplevelAlert(message, status) {
+  var $alert = jQuery('#toplevel-alert');
+
+  if (typeof status === 'undefined') {
+    status = 'success';
+  }
+
+  $alert
+    .removeClass('alert-danger')
+    .addClass('alert-' + status)
+    .slideDown()
+    .find('.message')
+      .text(message);
+
+    if (status === 'success') {
+      setTimeout(function () {
+        $alert
+          .removeClass('success')
+          .hide();
+      }, 3000);
+    }
+}
+
+/**
+ */
 function isAnonymous() {
   console.log('Anonymous');
 
