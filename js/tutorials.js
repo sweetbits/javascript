@@ -52,8 +52,8 @@ function isAnonymous() {
   $('#login-link').show();
   $('#profile-link').hide();
 
-  $('section#logged-in').hide();
-  $('section#anonymous').show();
+  $('.logged-in').hide();
+  $('.anonymous').show();
 }
 
 function isLoggedIn() {
@@ -62,8 +62,8 @@ function isLoggedIn() {
   $('#login-link').hide();
   $('#profile-link').show();
 
-  $('section#logged-in').show();
-  $('section#anonymous').hide();
+  $('.logged-in').show();
+  $('.anonymous').hide();
 }
 
 function ucfirst(str) {
